@@ -58,16 +58,16 @@ public class Validation implements Constants {
     }
 
     /**
-     * This method is used to check logiID pattern
+     * This method is used to check customerID number pattern
      *
-     * @param logiID should be a valid logiID
+     * @param customerID should be a valid customerID
      * @return true, if pattern matches otherwise false
      */
-    private static boolean isValidLoginID(String logiID) {
-        if (Util.isStringEmpty(logiID))
+    private static boolean isValidLoginID(String customerID) {
+        if (Util.isStringEmpty(customerID))
             return false;
         else {
-            return logiID.trim().matches(logiIDPattern);
+            return customerID.trim().matches(customerIDPattern);
 
         }
     }
@@ -83,7 +83,7 @@ public class Validation implements Constants {
     public static boolean isValidId(Activity activity, String value, int length) {
 
         if (Util.isStringEmpty(value)) {
-            Util.showToast(activity, activity.getResources().getString(R.string.logiID_empty));
+            Util.showToast(activity, activity.getResources().getString(R.string.customerID_empty));
             return false;
         }
         if (!Validation.isValidLength(value, length)) {
