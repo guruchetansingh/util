@@ -1,4 +1,4 @@
-package com.hathway.constants;
+package com.createfakecontacts.util;
 
 import com.google.gson.Gson;
 

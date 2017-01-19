@@ -1,7 +1,6 @@
-package com.hathway.hitapis;
+package com.createfakecontacts.hitapis;
 
 import android.content.Context;
-import android.net.Uri;
 import android.util.Log;
 
 import com.android.volley.AuthFailureError;
@@ -9,19 +8,18 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.hathway.constants.Constants;
-import com.hathway.hitapis.response.ResponseOfAPI;
+import com.constants.Constants;
+import com.hitapis.response.ResponseOfAPI;
 
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
 import de.greenrobot.event.EventBus;
+
+import static com.createfakecontacts.util.Constants.BASE_URL;
 
 /**
  * Created by guruchetan on 14/9/16.

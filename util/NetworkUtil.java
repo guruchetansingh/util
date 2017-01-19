@@ -1,9 +1,8 @@
-package com.hathway.util;
+package com.createfakecontacts.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 
-import com.hathway.constants.Constants;
 
 import java.io.InputStream;
 import java.net.Socket;

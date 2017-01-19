@@ -1,8 +1,7 @@
-package com.hathway.util;
+package com.createfakecontacts.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 import com.hathway.constants.Constants;
 

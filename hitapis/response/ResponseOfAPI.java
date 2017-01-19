@@ -1,4 +1,4 @@
-package com.hathway.hitapis.response;
+package com.createfakecontacts.hitapis.response;
 
 import org.json.JSONException;
 import org.json.JSONObject;

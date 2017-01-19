@@ -1,4 +1,4 @@
-package com.hathway.hitapis;
+package com.createfakecontacts.hitapis;
 
 import android.content.Context;
 

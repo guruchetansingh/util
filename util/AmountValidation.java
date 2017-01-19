@@ -1,4 +1,4 @@
-package com.utils;
+package com.createfakecontacts.util;
 
 import android.util.Log;
 

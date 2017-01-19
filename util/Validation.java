@@ -1,11 +1,6 @@
-package com.hathway.util;
+package com.createfakecontacts.util;
 
 import android.app.Activity;
-
-import com.hathway.R;
-import com.hathway.constants.Constants;
-
-import java.security.KeyStore;
 
 /**
  * Created by guruchetan on 1/9/16.
