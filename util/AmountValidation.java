@@ -3,10 +3,10 @@ package com.createfakecontacts.util;
  * Created by guru on 03-02-2017.
  */
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import java.math.BigDecimal;
-import java.util.StringTokenizer;
 
 /**
  * Created by guru
@@ -44,6 +44,8 @@ public class AmountValidation {
     private double MIN_RANG;
 
     public AmountValidation() {
+        this.MIN_RANG = 0;
+        this.MAX_RANG = 100000;
     }
 
     public AmountValidation(double MIN_RANG, double MAX_RANG) {
@@ -76,7 +78,7 @@ public class AmountValidation {
 
             BigDecimal decimal = new BigDecimal(number);
             decimal = decimal.setScale(2, BigDecimal.ROUND_DOWN);
-            Log.i(TAG, "decimal.doubleValue() = " + decimal.toString());
+//            Log.i(TAG, "decimal.doubleValue() = " + decimal.toString());
             if (!isValidRange(decimal.doubleValue()))
                 return false;
 
@@ -91,14 +93,36 @@ public class AmountValidation {
     }
 
     private boolean hasThreeDigitAfterDecimal(String number) {
-        StringTokenizer stringTokenizer = new StringTokenizer(number, ".");
-        if (stringTokenizer.countTokens() > 1)
+        if (TextUtils.isEmpty(number))
             return true;
-        while (stringTokenizer.hasMoreElements()) {
-            if (stringTokenizer.nextElement().toString().length() > 2)
-                return true;
+
+        int counter = 0;
+        for (int i = 0; i < number.length(); i++) {
+            if (number.charAt(i) == '.') {
+                ++counter;
+                if (counter > 2)
+                    return true;
+            }
+
         }
 
+        int index = number.indexOf('.');
+        try {
+            if (index == (number.length() - 1))
+                return true;
+
+            if (index == -1)
+                return false;
+
+        } catch (Exception e) {
+            return true;
+        }
+
+
+        String sub = number.substring(number.indexOf('.') + 1);
+        if (sub.length() > 2) {
+            return true;
+        }
         return false;
     }
 
@@ -118,7 +142,7 @@ public class AmountValidation {
 
             BigDecimal decimal = new BigDecimal(amount);
             decimal = decimal.setScale(2, BigDecimal.ROUND_DOWN);
-            Log.i(TAG, "decimal.doubleValue() = " + decimal.toString());
+//            Log.i(TAG, "decimal.doubleValue() = " + decimal.toString());
             return decimal.toString();
         } catch (NumberFormatException e) {
             Log.e(TAG, "[NumberFormatException] = " + e.toString());
